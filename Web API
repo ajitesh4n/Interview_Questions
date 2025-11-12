@@ -21,4 +21,11 @@ Protocol with strict standards	Architectural style using standard HTTP methods
 Uses XML for messaging	Typically uses JSON (can also use XML or others)
 Rigid and feature-rich (security, ACID compliance)	Simpler and lightweight
 Relies on defined operations and endpoints	Uses URLs to represent resources
-Common in enterprise applications requiring strict contracts	Widely used for web and mobile applications
+Common in enterprise applications requiring strict contracts	Widely used for web and mobile applications.
+
+What is CORS and why is it important in Web APIs?
+CORS (Cross-Origin Resource Sharing) is a security feature implemented by web browsers to control how resources are accessed from a domain different from the one serving the application. Without CORS, browsers block cross-origin requests by default to protect users from malicious sites.
+It allows servers to specify which domains (origins) are permitted to access their resources.
+Prevents unauthorized access to sensitive data, while still enabling legitimate cross-origin interactions such as calling an API from a frontend hosted on another domain.
+A frontend running on http://example.com can make API requests to http://api.example.org only if the API server explicitly allows it via CORS headers.
+

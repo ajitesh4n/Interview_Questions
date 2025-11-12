@@ -1,0 +1,9 @@
+1. How do Web APIs work?
+Web APIs allow different applications to communicate over the Internet by sending and receiving data. The process works as follows:
+
+Client Request: The client (browser, mobile app, or another server) sends a request to the API endpoint.
+URL Routing: The server identifies the requested resource and the appropriate handler based on the URL.
+Request Processing: The API processes the request, which may involve authentication, validation, or business logic.
+Data Handling: The API interacts with databases or other services to retrieve, update, or delete data.
+Response Generation: The server prepares a response, usually in JSON or XML format.
+Client Response: The response is sent back to the client for display, processing, or further actions.

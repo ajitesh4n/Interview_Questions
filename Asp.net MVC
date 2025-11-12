@@ -1,1 +1,519 @@
+C# and OOPSh 
+•	What is Garbage collector in C# and how is it work?
+In the common language runtime (CLR), the garbage collector (GC) serves as an automatic memory manager. The garbage collector manages the allocation and release of memory for an application. For developers working with managed code, this means that you don't have to write code to perform memory management tasks. Automatic memory management can eliminate common problems, such as forgetting to free an object and causing a memory leak or attempting to access memory for an object that's already been freed.
+•	What is reflection?
+Reflection objects are used for obtaining type information at runtime. The classes that give access to the metadata of a running program are in the System.Reflection namespace.The System.Reflection namespace contains classes that allow you to obtain information about the application and to dynamically add types, values, and objects to the application.
+
+•	What is object pooling?
+Object Pooling in .NET allows objects to keep in the memory pool so the objects can be reused without recreating them.
+
+Keeping reusable instances of objects in a resource pool and using them out as needed boosts the performance of a .NET application. During the request of an object to use from the application, if the object is available from the pool, it is returned from the pool. In case the object requested by the application is not available from the pool, a new instance of the object is created and returned to the source program.
+
+•	How to implement dependency injection in C#?
+•	What is Serialization and types of Serialization? 
+         Serialization is the process of encoding an object or class into a persistent or transportable state. This allows you to take a complex data type, then         encode, save, transfer, and decode it, with the possibility that a separate process handles the decoding.
+        There are two main serialization types:
+        Binary serialization — Takes the data type and converts it into a binary stream.
+       XML serialization — Converts the data type into an XML stream which you can then convert to an XML document.
+
+•	Where we should use abstract class and interface in our code? Give example.
+A method without any particular body is known as an abstract method. These methods contain only declaration of the method.
+Abstract Class An abstract class is a special class that contains both abstract and non-abstract members in it.
+1.	Abstract class can contain abstract members as well as non-abstract members in it.
+2.	A class can only inherit from one abstract Class.
+3.	We cannot create object of an abstract class.
+            Interface
+
+          It is also user defined type like a class which only contains abstract members in it. These abstract members should be given the implementation under a child class of an     interface. A Class can be inherited from a class or from an interface.
+
+          Points to remember
+1.	Interface contains only abstract methods.
+2.	We cannot create object of an interface.
+3.	The default scope for a member in Interface is Public. So, no need to use the Public access specifier in the program.
+
+
+
+Abstract Class	Interface
+It contains both declaration and definition part.	It contains only a declaration part.
+Multiple inheritance is not achieved by abstract class.	Multiple inheritance is achieved by interface.
+It contain constructor.
+It does not contain constructor.
+
+It can contain static members.	It does not contain static members.
+It can contain different types of access modifiers like public, private, protected etc.	It only contains public access modifier because everything in the interface is public.
+The performance of an abstract class is fast.	The performance of interface is slow because it requires time to search actual method in the corresponding class.
+It is used to implement the core identity of class.	It is used to implement peripheral abilities of class.
+A class can only use one abstract class.	A class can use multiple interface.
+If many implementations are of the same kind and use common behavior, then it is superior to use abstract class.	If many implementations only share methods, then it is superior to use Interface.
+Abstract class can contain methods, fields, constants, etc.	Interface can only contain methods .
+It can be fully, partially or not implemented.	It should be fully implemented.
+
+
+•	What is Data annotation?
+Data annotations (available as part of the System. ComponentModel. DataAnnotations namespace) are attributes that can be applied to classes or class members to specify the relationship between classes, describe how the data is to be displayed in the UI, and specify validation rules. 
+
+•	What is auto implemented properties?
+Auto-implemented properties that requires no code inside get and set methods of the class properties. It makes code concise and readable.
+
+•	Use of const variables 
+Constants are immutable values which are known at compile time and do not change for the life of the program. Constants are declared with the const modifier. Only the C# built-in types (excluding System.Object) may be declared as const. User-defined types, including classes, structs, and arrays, cannot be const. Use the readonly modifier to create a class, struct, or array that is initialized one time at runtime (for example in a constructor) and thereafter cannot be changed.
+C# does not support const methods, properties, or events.
+
+•	What is type casting in C#?
+Implicit casting is done automatically when passing a smaller size type to a larger size type.
+Explicit casting must be done manually by placing the type in parentheses in front of the value.
+
+•	What is multithreading?
+Multithreading in C# is a process in which multiple threads work simultaneously. It is a process to achieve multitasking. It saves time because multiple tasks are being executed at a time. To create multithreaded application in C#, we need to use System.Threding namespace.
+•	What is Async and await programming?
+Nowadays, Asynchronous programming is very popular with the help of the async and await keywords in C#. When we are dealing with UI, and on button click, we use a long-running method like reading a large file or something else which will take a long time, in that case, the entire application must wait to complete the whole task. In other words, if any process is blocked in a synchronous application, the whole application gets blocked, and our application stops responding until the whole task completes.
+Asynchronous programming is very helpful in this condition. By using Asynchronous programming, the Application can continue with the other work that does not depend on the completion of the entire task.
+
+•	What is access modifiers and what are the different type of it?
+Private Access Modifier
+Objects that implement private access modifier are accessible only inside a class or a structure. As a result, we can’t access  them outside the class they are created:
+        Public Access Modifier
+           Objects that implement public access modifiers are accessible from everywhere in our project. Therefore, there are no accessibility restrictions:
+        Protected Access Modifier
+             The protected keyword implies that the object is accessible inside the class and in all classes that derive from that class. We will talk in more detail about inheritance in module 2 about object-     oriented programming. But for now, we are going to take a look at this example to understand the behavior of the protected members:
+        Internal Access Modifier
+             The internal keyword specifies that the object is accessible only inside its own assembly but not in other assemblies:
+        Protected Internal Access Modifier
+              The protected internal access modifier is a combination of protected and internal. As a result, we can access the protected internal member only in the same assembly or in a derived class in other assemblies (projects):
+      
+
+  Private Protected Access Modifier
+               The private protected access modifier is a combination of the private and protected keywords. We can access members inside the containing class or in a class that derives from a containing class, but only in the same assembly(project). Therefore, if we try to access it from another assembly, we will get an error.
+
+•	Can we have sealed methods?
+Sealed classes are used to restrict the users from inheriting the class. A class can be sealed by using the sealed keyword. The keyword tells the compiler that the class is sealed, and therefore, cannot be extended. No class can be derived from a sealed class.
+•	What is constructor and types of constructors?
+A constructor is a special method that is used to initialize an object. A constructor is invoked at the time of an object creation. Constructor name must be the same as its class name. A constructor must have no explicit return type.
+•	Default constructor
+•	Parameterized constructor
+•	Copy constructor
+•	Static constructor
+•	Private constructor
+•	Default Constructor
+•	A constructor without any parameters is called a default constructor. If we do not create constructor the class will automatically call default constructor when an object is created.
+•	Parameter Constructor
+•	A constructor with at least one parameter is called a parametrized constructor.
+•	Copy Constructor
+•	The constructor which creates an object by copying variables from another object is called a copy constructor.
+•	Static Constructor
+•	A static constructor is used to initialize any static data, or to perform a particular action that needs to be performed once only. It is called automatically before the first instance is created or any static members are referenced.
+Characteristic of static constructor
+•	A static constructor does not take any access modifiers.
+•	A static constructor does not have a parameter.
+•	A static constructor is called automatically to initialize the class before the first instance is created or any static members are referenced.
+•	A static constructor cannot be called directly.
+•	The user has no control over when the static constructor is executed in the program.
+•	A typical use of static constructors is when the class is using a log file and the constructor is used to write entries to this file.
+•	A class can have only one static constructor.
+•	It can access only static members of a class. 
+/
+             A private constructor is a special instance constructor. It is generally used in classes that contain static members only. If a class has one or more private constructors and no public constructors,        other classes (except nested classes) cannot create instances of this class. The use of private constructor is to serve singleton classes. A singleton class is one which limits the number of objects created to one. Using private constructor we can ensure that no more than one object can be created at a time
+•	One use of private constructor is when we have the only static member.
+•	It provides the implementation of singleton class pattern.
+•	Once we provide constructor (private/public/any) the compiler will not add the no parameter public constructor to any class.
+
+
+
+•	What is destructor? Why we need it?
+•	What is extension method?
+•	What is Anonymous methods?
+•	What is thread safe in C#?
+•	What is delegates and what are inbuilt delegates in C#?
+•	Can we create constructor of abstract class?
+•	Difference between Generic and non-Generic collections
+•	Difference between Managed and Unmanaged code
+•	Difference between Boxing and unboxing 
+•	Difference between HashTable and Dictionary 
+•	Difference between Class vs Struct
+•	Difference between global variable and property 
+•	Difference between dispose and finalize
+•	Difference between base and this 
+•	Difference between Singleton and static class 
+The advantage of using a static class is the compiler makes sure that no instance methods are accidentally added. The compiler guarantees that instances of the class cannot be created.
+
+A singleton class has a private constructor that prevents the class from being instantiated. A singleton class can have instance members while a static class cannot.
+
+•	Difference between var and dynamic 
+•	Action filter
+•	Difference between Session and cookies
+•	Difference between readonly and const
+Difference between const and readonly
+•	const fields has to be initialized while declaration only, while readonly fields can be initialized at declaration or in the constructor.
+•	const variables can declared in methods ,while readonly fields cannot be declared in methods.
+•	const fields cannot be used with static modifier, while readonly fields can be used with static modifier.
+•	A const field is a compile-time constant, the readonly field can be used for run time constants.
+
+•	Difference between ref and out 
+•	Difference between Error and Exception
+•	Difference between throw and throw exception
+•	Difference between is and as
+•	Difference between heap and stack memory
+Category	Stack Memory	Heap Memory
+What is Stack & Heap?	It is an array of memory.
+
+It is a LIFO (Last In First Out) data structure.
+
+In it data can be added to and deleted only from the top of it.	It is an area of memory where chunks are allocated to store certain kinds of data objects.
+In it data can be stored and removed in any order.
+
+•	Difference between equal method and == operator 
+•	Difference between mutable and immutable
+•	Difference between hashing and encryption
+•	Override and overload in C#.
+•	Application Life cycle.
+•	Yield keyword, enum, shield.
+•	Annogram.
+
+
+
+
+•	Anonymous Authentication.
+Anonymous authentication gives users access to the public areas of your Web or FTP site without prompting them for a user name or password. By default, the IUSR account, which was introduced in IIS 7.0 and replaces the IIS 6.0 IUSR_computername account, is used to allow anonymous access. An application is a grouping of files that delivers content or provides services over protocols, such as HTTP. When you create an application in IIS, the application's path becomes part of the site's URL.
+By default, IIS 7 uses Anonymous authentication. You must disable Anonymous authentication for any Web site, Web application, or Web service for which you want to enable other authentication methods such as Basic or Windows authentication.
+
+•	Form Authentication.
+•	Thread Polling.
+Polling repeatedly checks the status of an asynchronous call from within a loop. Polling is the least efficient way to manage threads because it wastes resources by repeatedly checking the status of the various thread properties.
+
+
+
+Design Patterns and Principles
+•	Design Patterns and their types.
+•	What are SOLID principles?
+What is SOLID?
+SOLID is an acronym for five principles of architecture.
+S – Single Responsibility Principle
+O – Open Close Principle
+L – Liskov Substitution Principle
+I –Interface Segregation Principle
+D – Dependency Inversion Principle 
+Single Responsibility Principle (SRP)
+It says that every class should have single responsibility. A class should not have more than one reason to change.
+Example
+
+Suppose, you have created a class XmlValidator for XML validation, which has the responsibility to validate XML.
+If there is a need to update XML, then a separate class should be created for the same. XmlValidator class should not be used for updating XML. 
+1.	public class XmlValidator   
+2.	    {  
+3.	  
+4.	        public void Validate()  
+5.	        {  
+6.	  
+7.	              
+8.	        }  
+9.	         
+10.	    }   
+For updating a new class, it should be created. 
+1.	public class XmlUpdate  
+2.	    {  
+3.	  
+4.	        public void DoUpdate()  
+5.	        {  
+6.	  
+7.	  
+8.	        }  
+9.	  
+10.	  
+11.	    }
+Open Close Principle (OCP)
+A class should be open for an extension and closed for the modification.
+Example
+
+Suppose, we have a class name Customer, which has a property InvoiceNumber, which has an integer type 
+1.	public class Customer  
+2.	    {  
+3.	        public int InvoiceNumber  
+4.	        {  
+5.	            get;  
+6.	            set;  
+7.	  
+8.	        }  
+9.	    }   
+In the future, if the requirement changes now, InvoiceNumber should be alphanumeric rather than only an integer. Hence, in this case, you should create a subclass CustomerNew with a same property but different datatype rather than modifying the previous one. 
+1.	public class CustomerNew : Customer  
+2.	    {  
+3.	  
+4.	        public new String InvoiceNumber  
+5.	        {  
+6.	            get;  
+7.	            set;  
+8.	  
+9.	        }  
+10.	    }
+Liskov Substitution Principle (LSP)
+A parent object should be able to replace its child during runtime polymorphism.
+Example
+
+Suppose, you have two classes, Cooler and Fan, both are inherited from a common interface named ISwitch, which has three methods- On, Off and Regulate. 
+1.	public interface ISwitch  
+2.	    {  
+3.	        void On();  
+4.	        void Off();  
+5.	    }  
+6.	  
+7.	    public class Cooler : ISwitch  
+8.	    {  
+9.	        public void On()  
+10.	        {  
+11.	              
+12.	        }  
+13.	        public void Off()  
+14.	        {  
+15.	  
+16.	        }  
+17.	  
+18.	        public void Regulate()  
+19.	        {  
+20.	  
+21.	        }  
+22.	  
+23.	    }  
+24.	  
+25.	    public class Fan : ISwitch  
+26.	    {  
+27.	        public void On()  
+28.	        {  
+29.	  
+30.	        }  
+31.	  
+32.	        public void Off()  
+33.	        {  
+34.	  
+35.	        }  
+36.	        public void Regulate()  
+37.	        {  
+38.	  
+39.	        }  
+40.	  
+41.	    }  
+42.	  
+43.	    public class MainClass  
+44.	    {  
+45.	        public void AddObject()  
+46.	        {  
+47.	            List<ISwitch> Switch = new List<ISwitch>();  
+48.	            Switch.Add(new Cooler());  
+49.	            Switch.Add(new Fan());  
+50.	            
+51.	            foreach (var o in Switch)  
+52.	            {  
+53.	                o.Regulate();  
+54.	            }  
+55.	        }  
+56.	    }   
+Everything was fine until a new class introduced for same interface named Bulb, which has only two methods On and Off. It does not have Regulate method. Thus Bulb class is given below. 
+1.	public class Bulb : ISwitch  
+2.	    {  
+3.	        public void On()  
+4.	        {  
+5.	  
+6.	        }  
+7.	  
+8.	        public void Off()  
+9.	        {  
+10.	  
+11.	        }  
+12.	        public void Regulate()  
+13.	        {  
+14.	            throw new NotImplementedException();  
+15.	        }  
+16.	  
+17.	    }   
+Now, AddObject method will be updated, as shown below. 
+1.	public void AddObject()  
+2.	        {  
+3.	            List<ISwitch> Switch = new List<ISwitch>();  
+4.	            Switch.Add(new Cooler());  
+5.	            Switch.Add(new Fan());  
+6.	            Switch.Add(new Bulb());            
+7.	  
+8.	            foreach (var o in Switch)  
+9.	            {  
+10.	                o.Regulate();  
+11.	            }  
+12.	        }   
+In this case, Regulate method will throw an error.
+One horrible solution to this problem is to put an if condition. 
+1.	foreach (var o in Switch)  
+2.	            {  
+3.	  
+4.	if(o is Bulb)  
+5.	    continue;  
+6.	  
+7.	                o.Regulate();  
+8.	            }   
+This is an example of bad design, if above condition is used somewhere, it clearly means that there is a violation of LSK principle. 
+Interface Segregation Principle (ISP)
+Client specific interfaces are better than general purpose interfaces.
+Suppose, we have one interface for clicking.
+1.	public interface IClick{   
+2.	    void onClick(Object obj);  
+3.	}  
+As time passes, new requirement comes for adding one more function onLongClick. You need to add this method in already created interface.
+1.	public interface IClick{   
+2.	    void onClick(Object obj);  
+3.	    void onLongClick(Object obj);  
+4.	}  
+After some time, one new requirement comes for adding function for touch also and you need to add the method in the same interface
+1.	public interface IClick{   
+2.	    void onClick(Object obj);  
+3.	    void onLongClick(Object obj);  
+4.	    void onTouch(Object obj);  
+5.	}  
+At this point, you need to decide to change the name of interface too because touch is different than click.
+In this way, this interface becomes a problem—generic and polluted. At this stage, ISP comes into play. 
+Why Generic Interface creates problem?
+Suppose, some clients need only onClick function and some need only onTouch function, then one will be useless for both. Hence ISP gives the solution, which splits the interface into two interfaces.
+ITouch and IClick. The client which has required onClick can implement IClick, which needs onTouch. It can implement ITouch and when it needs both, it can implement both.
+1.	public interface IClick{   
+2.	    void onClick(Object obj);  
+3.	    void onLongClick(Object obj);  
+4.	}  
+5.	  
+6.	public interface ITouch{   
+7.	    void onClick(Object obj);  
+8.	    void onTouch(Object obj);  
+9.	}
+Dependency Inversion Principle (ISP)
+It states two points, where the first point is a higher level module, which should not depend on a low level module. Both should depend on abstraction. The second point is abstraction, which should not depend on detail. 
+Detail should depend on abstraction.
+In other words, no object should be created inside a class. They should be passed or injected from outside. When it  is received, it will be an interface rather than a class.
+Here is a bad design without using Dependency Injection. 
+1.	class Student  
+2.	{  
+3.	    // Handle to EventLog writer to write to the logs  
+4.	    LogWriter writer = null;  
+5.	    // This function will be called when the student has problem  
+6.	    public void Notify(string message)  
+7.	    {  
+8.	        if (writer == null)  
+9.	        {  
+10.	            writer = new LogWriter();  
+11.	        }  
+12.	        writer.Write(message);  
+13.	    }  
+14.	}   
+This is also a bad design. 
+1.	class Student  
+2.	{  
+3.	    // Handle to EventLog writer to write to the logs  
+4.	    LogWriter writer = null;  
+5.	Public Student(LogWriter writer)  
+6.	    {  
+7.	  
+8.	     This.writer = writer;  
+9.	}  
+10.	    // This function will be called when the student has problem  
+11.	    public void Notify(string message)  
+12.	    {  
+13.	        writer.Write(message);  
+14.	    }  
+15.	}   
+The written classes given above are bad designs because in the case of a change in LogWrite, you have to disturb Student class. We should use an interface inside Student instead of a class.
+With Dependency Injection, the code is given, as shown below. 
+1.	class Student  
+2.	{  
+3.	    // Handle to EventLog writer to write to the logs  
+4.	    ILogWriter writer = null;  
+5.	Public Student(ILogWriter writer)  
+6.	    {  
+7.	  
+8.	      This.writer = writer;  
+9.	}  
+10.	    // This function will be called when the student has problem  
+11.	    public void Notify(string message)  
+12.	    {  
+13.	        writer.Write(message);  
+14.	    }  
+15.	}  
+
+•	What is Dependency Injection?
+•	What is singleton class and what are the different ways to implement this?
+•	Which design pattern followed by Dependency injection?
+•	What is repository pattern?
+•	Which design pattern followed by repository pattern?
+ 
+MVC
+•	Life cycle of MVC
+•	Difference between API controller and MVC controller 
+•	How to manage session in MVC
+•	What are action filters in MVC and types of action filters? Any order of filter
+•	Difference between partial view and view. 
+•	Difference between viewdata vs viewbag vs tempdata
+•	What is global filter? 
+•	How to manage exceptions in MVC?
+•	How to manage exceptions globally in MVC?
+•	How to use cache in MVC?
+•	How to exclude filter from specific action method if filter applied on class level?
+•	What is use of View Start file in MVC?
+•	Return type in MVC
+•	Remote validation
+•	Model Validation
+•	Integration segregation principal
+•	Areas in MVC
+•	
+
+
+Web API
+•	What is web API?
+•	What is Rest API?
+•	Difference between REST API and Web API 
+•	What is advantages of using API? 
+•	Why we should use web API over WCF?
+•	What is CORS in web API and how to register them in Asp.Net core?
+•	What is delegating handler web API?
+•	How to consume web API?
+•	What are different return type in web API 
+•	How to return multiple data types from web API?
+•	What is Media formatters in web API?
+•	Different between Get, Post, Delete, Put and Patch.
+•	How to authenticate Web API in MVC? 
+•	How to authenticate Web API in .Net core?
+•	What is content negotiation in web API?
+•	How to send file and read it at service side in web API?
+•	What is oAuth
+•	How to get data type sent in web API request?
+•	What is JWT token and how is it works?
+•	What is claims in JWT token?
+•	Parts of JWT token.
+•	How to destroy JWT token when user make logout?
+•	How to refresh JWT token when it expired?
+LINQ and Entity framework
+•	Difference between Entity framework and Ado.net
+•	How to update entity for new tables 
+•	Code first and Database first approaches. Which approach we should use?
+•	How to call stored procedure in entity framework core?
+•	LINQ joins
+•	Write LINQ query with where clause.
+
+JQuery and JavaScript
+•	Difference between == and === 
+•	Common functionality for Ajax
+•	Callback function in JQuery
+•	What is difference between var and let?
+
+ASP.NET Core
+•	Life cycle of Asp.Net core.
+•	What are new features in ASP.Net core over MVC?
+•	How to implement Dependency injection in Asp.Net core?
+•	What is use of Singleton, transient and scope in Asp.net core with example?
+•	What is startup class in asp.net core?
+•	How to redirect to URL in .Net core?
+•	Different types of JSON files in Asp.Net core.
+•	Tag helpers in .Net core
+•	How to use inbuilt functionality of logging in Asp.Net core?
+•	How to handle global exceptions in Asp.Net core?
+•	What is middleware in asp.net core? 
+•	How to implement custom middleware .net core? 
+•	View components in Asp.Net core.
+•	What will happen if there will be any exception in middleware sequence in .net core?
+•	How to manage Session in Asp.Net core? 
+•	How to serve static files from different folder than wwwroot folder in ASP.NET Core? 
+
+
 

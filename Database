@@ -1,1 +1,61 @@
+SQL
+•	What is indexing in SQL and what are the types of indexing?
+•	What is stored procedure in SQL?
+•	What is Triggers in SQL?
+•	What is difference between Union vs Union all?
+•	Can we use transactions in triggers 
+•	Temp table and table variable in SQL
+•	What is CTE is SQL?
+•	Pivot table
+•	What is transaction isolation level in SQL?
+•	SQL function and its types.
+•	What is cursor in SQL?
+•	How to create temp table in SQL?
+•	What is No lock in SQL?
+•	What is no count on?
+•	Difference between CTE, Table Variable and Temp Table?
+•	What is execution plan?
+•	How to handle exceptions in SQL server?
+•	Varchar vs Nvarchar
+•	What will be result of 1+null in SQL?
+•	How to increase performance of update query without index?
+•	Difference between where and having.
+•	Difference between Row_Number(), Rank() and Dense_Rank()
+•	Cluster and non Cluster
+•	Diffrence between primary key and Unique key.
+•	2nd highest number in database.
+        SELECT name, MAX(salary) AS salary FROM employee   //Max Salary
+        WHERE salary < (SELECT MAX(salary)
+        FROM employee);
+
+•	Find the person whose age is 60.
+SELECT SSN,ENAME FROM EMP WHERE DATEDIFF(YEAR, DOB, GETDATE())=60
+
+•	Diffrence in UNION and UNION ALL.
+•	Create table and copy the table and it data in created table
+•	Data reader and Data adopter.
+•	Diffrence in Procedure and function.
+
+Function	Procedure
+A function deals with as an expression.	Procedure does not deal with as an expression.
+Function is used to calculate something from a given input. Hence it got its name from Mathematics.	While procedure is the set of commands, which are executed in a order.
+The function can be called by a procedure.	Procedure can not be called by a function.
+In sql, inside the function we can not use the DML(Data manipulation language) commands such as Insert, Delete, Update.	Here, in sql, inside the procedure we can use DML commands.
+Functions can be called through sql queries.	Procedure can’t be called through a sql query.
+Each time functions are compiled when they are called.	Procedures are compiled only once and can be called again and again as needed without being compiled each time.
+The return statement of a function returns the control and function’s result value to the calling program.	While the return statement of the procedure returns control to the calling program, it can not return the result value.
+Function doesn’t support try-catch blocks.	While it supports try-catch blocks.
+Function can be operated in the SELECT statement.	While it can’t be operated in the SELECT statement.
+Function does not support explicit transaction handles.	While procedure supports explicit transaction handles.
+
+•	Temp table and table variable.
+Temp Table	Table Variable
+A Temp table is easy to create and back up data.	Table variable involves the effort when you usually create the normal tables.
+Temp table result can be used by multiple users.	Table variable can be used by the current user only.
+Temp table will be stored in the tempdb. It will make network traffic. When you have large data in the temp table then it has to work across the database. A Performance issue will exist.	Table variable will store in the physical memory for some of the data, then later when the size increases it will be moved to the tempdb.
+Temp table can do all the DDL operations. It allows creating the indexes, dropping, altering, etc..	Table variable won't allow doing the DDL operations. But the table variable allows us to create the clustered index only.
+Temp table can be used for the current session or global. So that a multiple user session can utilize the results in the table.	Table variable can be used up to that program. (Stored procedure)
+When we do the DML operations with the temp table then it can be rollback or commit the transactions.	Temp variable cannot use the transactions. But we cannot rollback or commit for table variable.
+Function allows us to use the table variable.	Functions cannot use the temp variable. Moreover we cannot do the DML operation in the functions but using the table variable we can do that.
+Where the table variable won't do like that.	The stored procedure will do the recompilation (can't use same execution plan) when we use the temp variable for every subsequent calls.
 

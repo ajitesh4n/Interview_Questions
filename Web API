@@ -7,3 +7,18 @@ Request Processing: The API processes the request, which may involve authenticat
 Data Handling: The API interacts with databases or other services to retrieve, update, or delete data.
 Response Generation: The server prepares a response, usually in JSON or XML format.
 Client Response: The response is sent back to the client for display, processing, or further actions.
+
+What is RESTful API?
+A RESTful API (Representational State Transfer Application Programming Interface) is an architectural style for designing networked applications.
+
+Uses Standard HTTP Methods: GET, POST, PUT, DELETE to perform actions.
+Stateless: Each request from the client contains all information needed to process it.
+Resource-Based: Interacts with resources identified by URLs.
+Uniform Interface: Provides a consistent way to access and manipulate resources across applications.
+4. What is the difference between SOAP and RESTful APIs?
+SOAP (Simple Object Access Protocol)	RESTful API (Representational State Transfer Application Programming Interface)
+Protocol with strict standards	Architectural style using standard HTTP methods
+Uses XML for messaging	Typically uses JSON (can also use XML or others)
+Rigid and feature-rich (security, ACID compliance)	Simpler and lightweight
+Relies on defined operations and endpoints	Uses URLs to represent resources
+Common in enterprise applications requiring strict contracts	Widely used for web and mobile applications

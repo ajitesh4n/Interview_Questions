@@ -99,3 +99,10 @@ FROM (
         Customers
 ) AS ranked_salaries
 WHERE rownum = 1 and ranknum=1 and densenum=1 ; -- Replace N with the desired rank
+
+To find duplicates:
+SELECT Salary, COUNT(*) As 'Duplicate Row Count'
+FROM Customers
+GROUP BY Salary
+HAVING COUNT(*) > 1;
+

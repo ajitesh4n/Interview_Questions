@@ -173,3 +173,10 @@ SELECT (c1.CustomersId+1) AS 'Start Gap'
 FROM Customers c1
 LEFT JOIN Customers c2 ON c1.CustomersId + 1 = c2.CustomersId
 WHERE c2.CustomersId IS NULL;
+
+How do you handle NULLs in aggregations?
+Use COALESCE or default values:
+
+SELECT CustomersId, SUM(COALESCE(Salary, 0)) AS total_salary
+FROM Customers
+GROUP BY CustomersId;

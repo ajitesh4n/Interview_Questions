@@ -59,3 +59,43 @@ When we do the DML operations with the temp table then it can be rollback or com
 Function allows us to use the table variable.	Functions cannot use the temp variable. Moreover we cannot do the DML operation in the functions but using the table variable we can do that.
 Where the table variable won't do like that.	The stored procedure will do the recompilation (can't use same execution plan) when we use the temp variable for every subsequent calls.
 
+ROW_NUMBER()
+Assigns a unique sequential number to each row in the specified order.
+| name | score | row_number |
+| ---- | ----- | ---------- |
+| A    | 100   | 1          |
+| B    | 100   | 2          |
+| C    | 95    | 3          |
+| D    | 90    | 4          |
+
+RANK()
+Assigns the same rank to equal values but skips ranks after ties.
+| name | score | rank |
+| ---- | ----- | ---- |
+| A    | 100   | 1    |
+| B    | 100   | 1    |
+| C    | 95    | 3    |
+| D    | 90    | 4    |
+
+
+DENSE_RANK()
+Same as RANK() but does not skip numbers.
+| name | score | dense_rank |
+| ---- | ----- | ---------- |
+| A    | 100   | 1          |
+| B    | 100   | 1          |
+| C    | 95    | 2          |
+| D    | 90    | 3          |
+
+SQL Query to get the record based on the requirement
+SELECT *
+FROM (
+    SELECT
+        * ,
+        ROW_NUMBER() OVER (ORDER BY salary DESC) AS rownum,
+		RANK() OVER (ORDER BY salary DESC) AS ranknum,
+		DENSE_RANK() OVER (ORDER BY salary DESC) AS densenum
+		FROM
+        Customers
+) AS ranked_salaries
+WHERE rownum = 1 and ranknum=1 and densenum=1 ; -- Replace N with the desired rank

@@ -69,7 +69,7 @@ Assigns a unique sequential number to each row in the specified order.
 | D    | 90    | 4          |
 
 RANK()
-Assigns the same rank to equal values but skips ranks after ties.
+RANK() gives the same rank to ties but leaves gaps.
 | name | score | rank |
 | ---- | ----- | ---- |
 | A    | 100   | 1    |
@@ -79,7 +79,7 @@ Assigns the same rank to equal values but skips ranks after ties.
 
 
 DENSE_RANK()
-Same as RANK() but does not skip numbers.
+DENSE_RANK() gives the same rank to ties without leaving gaps.
 | name | score | dense_rank |
 | ---- | ----- | ---------- |
 | A    | 100   | 1          |

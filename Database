@@ -114,3 +114,54 @@ SUM(CASE WHEN Sex = 'M' THEN 1 ELSE 0 END) AS 'Total Male',
 SUM(CASE WHEN Sex = 'F' THEN 1 ELSE 0 END) AS 'Total Female'
 FROM Customers
 GROUP BY Department;
+
+INNER JOIN:
+Returns only the rows that have matching values in both tables.
+Rows with no match in either table are excluded.
+
+    SELECT columns
+    FROM TableA
+    INNER JOIN TableB
+    ON TableA.common_column = TableB.common_column;
+
+LEFT JOIN (or LEFT OUTER JOIN):
+Returns all rows from the left table (first table in the FROM clause) and the matching rows from the right table.
+If there is no match in the right table, NULL values are returned for the right table's columns.
+
+    SELECT columns
+    FROM TableA
+    LEFT JOIN TableB
+    ON TableA.common_column = TableB.common_column;
+
+RIGHT JOIN (or RIGHT OUTER JOIN):
+Returns all rows from the right table (second table in the FROM clause) and the matching rows from the left table.
+If there is no match in the left table, NULL values are returned for the left table's columns.
+
+    SELECT columns
+    FROM TableA
+    RIGHT JOIN TableB
+    ON TableA.common_column = TableB.common_column;
+
+FULL JOIN (or FULL OUTER JOIN):
+Returns all rows when there is a match in either the left or the right table.
+If there is no match, NULL values are returned for the columns of the table that lacks a match.
+
+    SELECT columns
+    FROM TableA
+    FULL JOIN TableB
+    ON TableA.common_column = TableB.common_column;
+
+CROSS JOIN:
+Returns the Cartesian product of the two tables. This means every row from the first table is combined with every row from the second table.
+No ON clause is used with CROSS JOIN.
+
+    SELECT columns
+    FROM TableA
+    CROSS JOIN TableB;
+
+SELF JOIN:
+A regular join where a table is joined with itself. This is achieved by using table aliases to treat the single table as two separate tables.
+
+    SELECT A.column1, B.column2
+    FROM TableA A, TableA B
+    WHERE A.common_column = B.common_column;

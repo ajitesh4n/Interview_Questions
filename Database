@@ -165,3 +165,11 @@ A regular join where a table is joined with itself. This is achieved by using ta
     SELECT A.column1, B.column2
     FROM TableA A, TableA B
     WHERE A.common_column = B.common_column;
+
+How do you find gaps in a sequence?
+Suppose you have Customer IDs and want to find missing ones:
+
+SELECT (c1.CustomersId+1) AS 'Start Gap'
+FROM Customers c1
+LEFT JOIN Customers c2 ON c1.CustomersId + 1 = c2.CustomersId
+WHERE c2.CustomersId IS NULL;

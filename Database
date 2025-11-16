@@ -106,3 +106,11 @@ FROM Customers
 GROUP BY Salary
 HAVING COUNT(*) > 1;
 
+Pivot data in SQL.
+Using CASE WHEN in the sql query
+
+SELECT Department,
+SUM(CASE WHEN Sex = 'M' THEN 1 ELSE 0 END) AS 'Total Male',
+SUM(CASE WHEN Sex = 'F' THEN 1 ELSE 0 END) AS 'Total Female'
+FROM Customers
+GROUP BY Department;

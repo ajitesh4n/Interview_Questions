@@ -432,6 +432,24 @@ With Dependency Injection, the code is given, as shown below.
 14.	    }  
 15.	}  
 
+ViewData
+1. ViewData is used to pass data from controller to view.
+2. It is derived 3. from ViewDataDictionary class.
+3. It is available for the current request only.
+4. Requires typecasting for complex data types and checks for null values to avoid an error.If redirection occurs, then its value becomes null.
+
+ViewBag
+1. ViewBag is also used to pass data from the controller to the respective view.
+2. ViewBag is a dynamic property that takes advantage of the new dynamic features in C# 4.0
+3. It is also available for the current request only.If redirection occurs, then its value becomes null.
+4. It doesn’t require typecasting for the complex data type.
+
+TempData
+1. TempData is derived from TempDataDictionary class
+2. TempData is used to pass data from the current request to the next request
+3. It keeps the information for the time of an HTTP Request. This means only from one page to another. It helps to maintain the data when we move from one controller to another controller or from one action to another action
+4. It requires typecasting for complex data types and checks for null values to avoid an error. Generally, it is used to store only one time messages like the error messages and validation messages
+
 •	What is Dependency Injection?
 •	What is singleton class and what are the different ways to implement this?
 •	Which design pattern followed by Dependency injection?

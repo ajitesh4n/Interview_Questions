@@ -18,9 +18,22 @@ SQL
 •	How to handle exceptions in SQL server?
 •	Varchar vs Nvarchar
 •	What will be result of 1+null in SQL?
+
+✅ What is the value of 1 + NULL in SQL Server?
+
+Answer: NULL
+
+💡 Why?
+
+Because NULL represents an unknown value.
+So:
+	•	1 + NULL → 1 + unknown → unknown → NULL
+	•	NULL + NULL → NULL
+	•	10 * NULL → NULL
+
+
 •	How to increase performance of update query without index?
-•	Difference between where and having.
-•	Difference between Row_Number(), Rank() and Dense_Rank()
+•	Difference between where and having in sql
 •	Cluster and non Cluster
 •	Diffrence between primary key and Unique key.
 •	2nd highest number in database.
